@@ -1,4 +1,4 @@
-package org.olaf.ucbudgetback;
+package org.olaf.ucbudget;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UcbudgetBackApplicationTests {
+public class UcbudgetServerApplicationTests {
 
 	@Test
 	public void contextLoads() {

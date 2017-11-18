@@ -1,12 +1,12 @@
-package org.olaf.ucbudgetback;
+package org.olaf.ucbudget;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UcbudgetBackApplication {
+public class UcbudgetServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UcbudgetBackApplication.class, args);
+		SpringApplication.run(UcbudgetServerApplication.class, args);
 	}
 }
