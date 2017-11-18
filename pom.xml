@@ -10,12 +10,6 @@
 
     <name>ucbudget</name>
     <description>Unnecessary Complex Budgeting Application</description>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <modules>
         <module>ucbudget-webapp</module>
         <module>ucbudget-db</module>
