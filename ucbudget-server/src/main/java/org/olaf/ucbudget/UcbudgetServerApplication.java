@@ -8,5 +8,6 @@ public class UcbudgetServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UcbudgetServerApplication.class, args);
+
 	}
 }
