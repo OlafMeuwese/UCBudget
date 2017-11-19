@@ -7,4 +7,8 @@
 
     <include file="001_create_user_table.xml"/>
     <include file="002_create_bank_table.xml"/>
+    <include file="003_add_primary_key_to_bank_table.xml"/>
+    <include file="004_rename_user_and_bank_table.xml"/>
+    <include file="005_create_accounts_table.xml"/>
+    <include file="006_create_mutations_table.sql"/>
 </databaseChangeLog>

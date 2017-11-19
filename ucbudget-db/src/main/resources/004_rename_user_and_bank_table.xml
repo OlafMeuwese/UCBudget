@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="004_rename_user_and_bank_table" author="Olaf Meuwese">
+        <renameTable oldTableName="user" newTableName="users" schemaName="ucbudget"/>
+        <renameTable oldTableName="bank" newTableName="banks" schemaName="ucbudget"/>
+        <rollback>
+            <renameTable oldTableName="users" newTableName="user" schemaName="ucbudget"/>
+            <renameTable oldTableName="banks" newTableName="bank" schemaName="ucbudget"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
