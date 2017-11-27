@@ -1,4 +1,4 @@
-package org.olaf.ucbudget.server.service;
+package org.olaf.ucbudget.server.resource;
 
 import java.util.List;
 

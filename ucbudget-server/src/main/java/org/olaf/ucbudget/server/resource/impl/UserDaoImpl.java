@@ -1,4 +1,4 @@
-package org.olaf.ucbudget.server.service.impl;
+package org.olaf.ucbudget.server.resource.impl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.olaf.ucbudget.server.domain.User;
-import org.olaf.ucbudget.server.service.UserDao;
+import org.olaf.ucbudget.server.resource.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
