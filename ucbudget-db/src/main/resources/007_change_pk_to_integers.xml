@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+<changeSet id="007_change_fk_types_in_accounts" author="Olaf Meuwese">
+    <modifyDataType tableName="users" columnName="id" newDataType="int"/>
+    <modifyDataType tableName="accounts" columnName="id" newDataType="int"/>
+    <modifyDataType tableName="banks" columnName="id" newDataType="int"/>
+    <rollback>
+        <modifyDataType tableName="users" columnName="id" newDataType="number"/>
+        <modifyDataType tableName="accounts" columnName="id" newDataType="number"/>
+        <modifyDataType tableName="banks" columnName="id" newDataType="number"/>
+    </rollback>
+</changeSet>
+
+</databaseChangeLog>
