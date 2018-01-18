@@ -11,4 +11,6 @@
     <include file="004_rename_user_and_bank_table.xml"/>
     <include file="005_create_accounts_table.xml"/>
     <include file="006_create_mutations_table.sql"/>
+    <include file="007_change_pk_to_integers.xml"/>
+    <include file="008_add_sequences_for_pk.xml"/>
 </databaseChangeLog>
