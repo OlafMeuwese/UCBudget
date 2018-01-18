@@ -16,7 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "mutations")
+@Table(name = "mutations", schema = "ucbudget")
 public class Mutation {
 
     @Id
