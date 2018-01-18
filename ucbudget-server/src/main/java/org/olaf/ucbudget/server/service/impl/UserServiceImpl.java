@@ -1,5 +1,7 @@
 package org.olaf.ucbudget.server.service.impl;
 
+import java.util.List;
+
 import org.olaf.ucbudget.server.domain.User;
 import org.olaf.ucbudget.server.resource.UserDao;
 import org.olaf.ucbudget.server.service.UserService;
@@ -16,7 +18,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User findById(Long id) {
+    public User findById(Integer id) {
         return userDao.findById(id);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userDao.findAll();
     }
 }

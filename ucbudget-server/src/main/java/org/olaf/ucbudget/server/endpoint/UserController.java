@@ -1,5 +1,7 @@
 package org.olaf.ucbudget.server.endpoint;
 
+import java.util.List;
+
 import org.olaf.ucbudget.server.domain.User;
 import org.olaf.ucbudget.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,11 @@ public class UserController {
 
     @RequestMapping(value = "/findById", method = RequestMethod.GET)
     public User findById(@RequestParam(value = "id") String id){
-        return userService.findById(Long.valueOf(id));
+        return userService.findById(Integer.valueOf(id));
+    }
+
+    @RequestMapping(value = "/list", method=RequestMethod.GET)
+    public List<User> getAll(){
+        return userService.getAll();
     }
 }
