@@ -6,13 +6,13 @@
 
 <changeSet id="008_add_sequences_for_pk" author="Olaf Meuwese">
     <createSequence sequenceName="ucbudget.accounts_id_seq" startValue="1" incrementBy="1"/>
-    <addAutoIncrement tableName="accounts" columnName="id"/>
+    <addAutoIncrement tableName="accounts" columnName="id" columnDataType="int" schemaName="ucbudget"/>
     <createSequence sequenceName="ucbudget.banks_id_seq" startValue="1" incrementBy="1"/>
-    <addAutoIncrement tableName="banks" columnName="id"/>
+    <addAutoIncrement tableName="banks" columnName="id" columnDataType="int" schemaName="ucbudget"/>
     <createSequence sequenceName="ucbudget.mutations_id_seq" startValue="1" incrementBy="1"/>
-    <addAutoIncrement tableName="mutations" columnName="id"/>
+    <addAutoIncrement tableName="mutations" columnName="id" columnDataType="int" schemaName="ucbudget"/>
     <createSequence sequenceName="ucbudget.users_id_seq" startValue="1" incrementBy="1"/>
-    <addAutoIncrement tableName="users" columnName="id" />
+    <addAutoIncrement tableName="users" columnName="id" columnDataType="int" schemaName="ucbudget"/>
     <rollback>
         <dropSequence sequenceName="ucbudget.accounts_id_seq"/>
         <dropSequence sequenceName="ucbudget.banks_id_seq"/>

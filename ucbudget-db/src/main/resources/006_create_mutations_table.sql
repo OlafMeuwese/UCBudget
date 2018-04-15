@@ -10,7 +10,7 @@ amount decimal(19,4) NOT NULL,
 record_date date NOT NULL,
 counter_name varchar(200),
 counter_account_number varchar(200),
-description text,
+description varchar(255),
 CONSTRAINT PK_MUTATIONS PRIMARY KEY (id),
 CONSTRAINT FK_MUTATIONS_ACCOUNT_ID FOREIGN KEY (account_id) REFERENCES ucbudget.accounts
 );

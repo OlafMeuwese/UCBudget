@@ -5,13 +5,13 @@
                                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
 <changeSet id="007_change_fk_types_in_accounts" author="Olaf Meuwese">
-    <modifyDataType tableName="users" columnName="id" newDataType="int"/>
-    <modifyDataType tableName="accounts" columnName="id" newDataType="int"/>
-    <modifyDataType tableName="banks" columnName="id" newDataType="int"/>
+    <modifyDataType tableName="users" columnName="id" newDataType="int" schemaName="ucbudget"/>
+    <modifyDataType tableName="accounts" columnName="id" newDataType="int" schemaName="ucbudget"/>
+    <modifyDataType tableName="banks" columnName="id" newDataType="int" schemaName="ucbudget"/>
     <rollback>
-        <modifyDataType tableName="users" columnName="id" newDataType="number"/>
-        <modifyDataType tableName="accounts" columnName="id" newDataType="number"/>
-        <modifyDataType tableName="banks" columnName="id" newDataType="number"/>
+        <modifyDataType tableName="users" columnName="id" newDataType="number" schemaName="ucbudget"/>
+        <modifyDataType tableName="accounts" columnName="id" newDataType="number" schemaName="ucbudget"/>
+        <modifyDataType tableName="banks" columnName="id" newDataType="number" schemaName="ucbudget"/>
     </rollback>
 </changeSet>
 

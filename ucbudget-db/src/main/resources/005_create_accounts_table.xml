@@ -10,12 +10,10 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="user_id" type="int">
-                <constraints referencedTableName="users" referencedColumnNames="id"
-                             foreignKeyName="FK_accounts_users_id" nullable="false"/>
+                <constraints nullable="false"/>
             </column>
             <column name="bank_id" type="int">
-                <constraints referencedTableName="banks" referencedColumnNames="id"
-                             foreignKeyName="FK_accounts_banks_id" nullable="false"/>
+                <constraints nullable="false"/>
             </column>
             <column name="number" type="varchar(100)">
                 <constraints nullable="false"/>
@@ -24,12 +22,23 @@
                 <constraints nullable="false"/>
             </column>
             <column name="balance" type="decimal(19,4)" defaultValue="0">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
         </createTable>
-    <rollback>
-        <dropTable tableName="accounts" schemaName="ucbudget"/>
-    </rollback>
+        <addForeignKeyConstraint baseTableName="accounts" baseColumnNames="user_id"
+                                 baseTableSchemaName="ucbudget"
+                                 constraintName="FK_accounts_users_id"
+                                 referencedTableName="users" referencedColumnNames="id"
+                                 referencedTableSchemaName="ucbudget"/>
+        <addForeignKeyConstraint baseTableName="accounts" baseColumnNames="bank_id"
+                                 baseTableSchemaName="ucbudget"
+                                 constraintName="FK_accounts_banks_id"
+                                 referencedTableName="banks"
+                                 referencedColumnNames="id"
+                                 referencedTableSchemaName="ucbudget"/>
+        <rollback>
+            <dropTable tableName="accounts" schemaName="ucbudget"/>
+        </rollback>
     </changeSet>
-    
+
 </databaseChangeLog>
