@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Autowired
@@ -25,5 +25,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> getAll() {
         return userDao.findAll();
+    }
+
+    @Override
+    public User save(User user) {
+        return userDao.create(user);
     }
 }

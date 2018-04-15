@@ -49,6 +49,18 @@ public class Mutation {
     @Column
     private String description;
 
+    public Mutation(Account account, String drCr, String type, BigDecimal amount, Date recordDate, String counterName,
+                    String counterAccountNumber, String description) {
+        this.account = account;
+        this.drCr = drCr;
+        this.type = type;
+        this.amount = amount;
+        this.recordDate = recordDate;
+        this.counterName = counterName;
+        this.counterAccountNumber = counterAccountNumber;
+        this.description = description;
+    }
+
     public Integer getId() {
         return id;
     }
