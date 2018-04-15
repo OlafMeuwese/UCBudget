@@ -5,7 +5,7 @@
 
 	<artifactId>ucbudget-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>ucbudget-server</name>
 	<description>Backend Server for UCBudget</description>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.olaf</groupId>
             <artifactId>ucbudget-webapp</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.olaf</groupId>
@@ -78,11 +78,6 @@
 	</dependencies>
 
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -97,19 +92,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.5.8.RELEASE</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<webResources>
-						<resource>
-							<directory>../ucbudget-webapp/dist/</directory>
-						</resource>
-					</webResources>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
