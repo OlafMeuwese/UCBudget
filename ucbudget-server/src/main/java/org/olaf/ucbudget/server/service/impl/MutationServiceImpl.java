@@ -14,8 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class MutationServiceImpl implements MutationService{
 
-    @Autowired
     private MutationDao mutationDao;
+
+    @Autowired
+    public MutationServiceImpl(MutationDao mutationDao) {
+        this.mutationDao = mutationDao;
+    }
 
     @Override
     public List<Mutation> getAllMutationsByAccountId(Integer accountId) {
@@ -40,4 +44,11 @@ public class MutationServiceImpl implements MutationService{
     public Mutation getMutationById(Integer id) {
         return mutationDao.findOne(id);
     }
+
+    @Override
+    public Mutation save(Mutation mutation) {
+        return mutationDao.save(mutation);
+    }
+
+
 }

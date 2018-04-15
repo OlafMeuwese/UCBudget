@@ -37,6 +37,18 @@ public class Account {
     @Column
     private BigDecimal balance;
 
+    public Account(User user, Bank bank, String number, String type) {
+        this(user, bank, number, type, new BigDecimal(0));
+    }
+
+    public Account(User user, Bank bank, String number, String type, BigDecimal balance) {
+        this.user = user;
+        this.bank = bank;
+        this.number = number;
+        this.type = type;
+        this.balance = balance;
+    }
+
     public Integer getId() {
         return id;
     }

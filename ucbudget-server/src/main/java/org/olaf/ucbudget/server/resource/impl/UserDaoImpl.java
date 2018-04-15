@@ -35,7 +35,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User create(User user) {
-        return (User) sessionFactory.getCurrentSession().save(user);
+        Integer id = (Integer) sessionFactory.getCurrentSession().save(user);
+        user.setId(id);
+        return user;
     }
 
 
@@ -45,4 +47,6 @@ public class UserDaoImpl implements UserDao {
         session.delete(user);
         return session.get(User.class, user.getId()) == null;
     }
+
+
 }

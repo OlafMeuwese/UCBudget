@@ -12,8 +12,7 @@ public interface UserDao {
     List<User> findAll();
 
     User create(User user);
+
     Boolean delete(User user);
-
-
 
 }

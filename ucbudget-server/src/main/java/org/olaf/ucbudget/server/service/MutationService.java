@@ -11,4 +11,6 @@ public interface MutationService {
     List<Mutation> getAll();
 
     Mutation getMutationById(Integer id);
+
+    Mutation save(Mutation mutation);
 }
