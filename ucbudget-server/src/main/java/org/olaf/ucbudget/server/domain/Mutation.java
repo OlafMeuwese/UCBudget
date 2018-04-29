@@ -49,6 +49,9 @@ public class Mutation {
     @Column
     private String description;
 
+    public Mutation() {
+    }
+
     public Mutation(Account account, String drCr, String type, BigDecimal amount, Date recordDate, String counterName,
                     String counterAccountNumber, String description) {
         this.account = account;
