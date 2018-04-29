@@ -10,8 +10,16 @@ import {MutationType} from "./mutation-type";
 })
 export class MutationListComponent implements OnInit {
 
-  public mutations: Mutation[] = [new Mutation(4, 5, MutationType.credit, 34.5,
-    new Date("2017-4-12"), "Vijfde Betaling", "Gerrit","NL1", )];
+  public mutations: Mutation[] = [new Mutation().deserialize({
+    id: 4,
+    bankAccount: 5,
+    type: MutationType.credit,
+    amount: 34.5,
+    recordDate: new Date("2017-4-12"),
+    description: "Vijfde Betaling",
+    accountName: "Gerrit",
+    accountNumber: "NL1"
+  })];
   title: string = "Mutationsz";
 
   constructor(private mutationService: MutationService) {
@@ -20,18 +28,15 @@ export class MutationListComponent implements OnInit {
 
   ngOnInit(): void {
     this.mutationService.getMutations()
-      .subscribe(mutationArray => mutationArray.forEach(
-        mutation => {
-          console.log("Date "+mutation.recordDate);
-          this.mutations.push(mutation)
-        }
-        ),
+      .subscribe(response => {
+          response.forEach(mutation => {
+            let newMutation = new Mutation().deserialize(mutation);
+            this.mutations.push(newMutation)
+          });
+        },
         error => console.error(error),
-        () => console.log(this.mutations));
+        () => console.log(this.mutations)
+      )
   }
 
-  private something(hello) {
-    hello.forEach(mutation => this.mutations.push(mutation));
-    console.log(hello);
-  }
 }
